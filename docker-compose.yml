@@ -1,0 +1,15 @@
+version: '3'
+services:
+  webhook:
+    build: 
+      context: ./webhook
+      platforms:
+        - linux/amd64
+    image: brunolaureano/akash-sev-webhook:latest
+
+  attestation:
+    build:
+      context: ./sidecar
+      platforms:
+        - linux/amd64
+    image: brunolaureano/akash-sev-attestation:latest
